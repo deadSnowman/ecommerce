@@ -1,0 +1,11 @@
+<h1>---Welcome---</h1>
+
+<%# figure out how to allign row-fluid for 4 items across each row %>
+<div class='row'>
+    <% @products.each do |product| %>
+      <div class='span3 well'>
+        <p><%= product.name %></p>
+        <p>$<%= product.price %></p>
+      </div>
+    <% end %>
+</div>
