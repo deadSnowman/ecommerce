@@ -1,11 +1,45 @@
-<h1>---Welcome---</h1>
+<div class="hero-unit">
+  <h1>Welcome</h1>
+  <p class="lead">C.C. offers yadayada yada and welcomes you to our site.  Buy something!</p>
+</div>
+
+<div class="row">
+  <div class="span3">
+    <ul class="nav nav-list">
+      <li class="nav-header">Categories</li>
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      ...
+    </ul>
+  </div>
+
+  <div class="span9">
+
+
 
 <%# figure out how to allign row-fluid for 4 items across each row %>
-<div class='row-fluid'>
+<div class='row'>
     <% @products.each do |product| %>
-      <div class='span3 well'>
+      <div class='span2 well'>
         <p><%= product.name %></p>
         <p>$<%= product.price %></p>
       </div>
     <% end %>
+
+
+
+    <div class="pagination">
+      <ul>
+        <li><a href="#">Prev</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">Next</a></li>
+      </ul>
+    </div>
+
+    </div>
+  </div>
 </div>

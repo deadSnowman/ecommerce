@@ -2,6 +2,7 @@ Store::Application.routes.draw do
   get "home/index"
 
   resources :products
+  resources :contacts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
