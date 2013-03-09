@@ -1,0 +1,2 @@
+module BProductsHelper
+end

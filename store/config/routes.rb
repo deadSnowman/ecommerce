@@ -3,6 +3,7 @@ Store::Application.routes.draw do
 
   resources :products
   resources :contacts
+  resources :b_products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
