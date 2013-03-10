@@ -12,6 +12,12 @@
     </div>
   </div>
   <div class="control-group">
+    <%= f.label :instock, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :instock, :class => 'checkbox' %>
+    </div>
+  </div>
+  <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :description, :rows => "3",  :class => 'text_area' %>
@@ -20,6 +26,6 @@
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                products_path, :class => 'btn' %>
-  </div>
-<% end %>
+      products_path, :class => 'btn' %>
+    </div>
+  <% end %>
