@@ -7,14 +7,13 @@
   <div class="span3">
     <ul class="nav nav-list">
       <li class="nav-header">Categories</li>
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Library</a></li>
-      ...
+      <% Category.all.each do |category| %>
+        <li><%= category.name %></li>
+      <% end %>
     </ul>
   </div>
 
   <div class="span9">
-
 
 
 <%# figure out how to allign row-fluid for 4 items across each row %>
