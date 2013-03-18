@@ -1,5 +1,8 @@
 Store::Application.routes.draw do
 
+  resources :customers
+
+
   get "home/index"
   
   resources :products
