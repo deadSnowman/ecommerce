@@ -28,7 +28,7 @@
                 <% end %>
               </td>
               <td>
-                Category: LOVE NOVEL<br \>
+                Category: <%= Category.find_by_id(product.category_id).name =%><br \>
                 Description: <%= product.description %>
               </td>
             </tr>
