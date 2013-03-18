@@ -1,12 +1,12 @@
 Store::Application.routes.draw do
-  resources :categories
-
 
   get "home/index"
-
+  
   resources :products
   resources :contacts
   resources :b_products
+  resources :categories
+  resources :admins
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
