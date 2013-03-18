@@ -19,6 +19,12 @@
   </div>
 
 
+  <div class="control-group">
+    <%= f.label :category, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :category_id, Category.all, :id, :name, {} %>
+    </div>
+  </div>
 
   <div class="control-group">
     <%= f.label :category, :class => 'control-label' %>
@@ -27,6 +33,7 @@
     </div>
   </div>
 
+  <%= f.class %>
 
 
   <div class="control-group">
