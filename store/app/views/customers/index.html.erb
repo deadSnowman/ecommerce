@@ -25,7 +25,7 @@
         <td><%= customer.username %></td>
         <td>**********</td>
         <td><%= number_to_phone(customer.phone, :area_code => true) %></td>
-        <td><%= Address.find_by_id(customer.address_id).line1 %>...</td>
+        <td><%= link_to Address.find_by_id(customer.address_id).line1, :controller => "addresses", :action => "show", :id => customer.address_id %> ...</td>
         <td><%=l customer.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
