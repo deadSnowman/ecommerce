@@ -9,6 +9,19 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      .emailDiv
+      {
+        position:static;
+        float:right;
+      }
+      .logo-right
+      {
+        position:relative;
+        float:right;
+        top:-60px;
+      }
+    </style>
   </head>
   <body>
     <div class="navbar navbar-fixed-top navbar-inverse">
@@ -26,13 +39,27 @@
               <li><%= link_to "Admin", admins_path%></li>
               <li><%= link_to "Contact Us", contacts_path %></li>
               <li><%= link_to "Cart" %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                <li class="emailDiv"><%= link_to current_user.email %></li>
+              <% else %>
+                <li><%= link_to "Sign in", new_user_session_path %></li>
+              <% end %>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
+    
     <div class="container">
+
+      <% if notice %>
+        <div class="alert">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong><%= notice %></strong>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div> <!-- close container -->
   </body>

@@ -44,3 +44,5 @@ gem 'twitter-bootstrap-rails'
 
 # spread results across pages
 gem 'will_paginate', '~> 3.0'
+
+gem 'devise'
