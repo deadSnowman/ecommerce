@@ -1,12 +1,13 @@
 <div class="hero-unit">
-  <%= image_tag("logo.png", :size => "250x250", :alt => "C.C. Logo", :class => 'logo-right') %>
+  <%= image_tag("logo.png", :size => "200x200", :alt => "C.C. Logo", :class => 'logo-right') %>
   <h1>Welcome</h1>
-  <p class="lead">C.C. offers yadayada yada and welcomes you to our site.  Buy something!</p>
+  <p>C.C. offers yadayada yada and welcomes you to our site.  Buy something!</p>
 </div>
+
 
 <div class="row">
   <div class="span3">
-    <div class="well" style="max-width: 340px; padding: 8px 0;">
+    <div class="well" style="padding: 8px 0;">
       <ul class="nav nav-list">
         <li class="nav-header">Categories</li>
         <% Category.all.each do |category| %>
@@ -16,19 +17,23 @@
     </div>
   </div>
 
+  <%# figure out how to allign row-fluid for 4 items across each row %>
   <div class="span9">
-
-    <%# figure out how to allign row-fluid for 4 items across each row %>
-    <div class='row'>
+    <div class="row">
+      <% count = 1 %>
       <% @products[0..5].each_slice(3) do |slice| %>
         <% slice.each do |product| %>
           <div class='span2 well'>
             <p><%= product.name %></p>
             <p>$<%= product.price %></p>
           </div>
+          <% if count == 3 %>
+          </div>
+          <div class="row">
+          <% end %>
+          <% count += 1 %>
         <% end %>
       <% end %>
-
     </div>
   </div>
 </div>
