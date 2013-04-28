@@ -1,20 +1,17 @@
 Store::Application.routes.draw do
 
+  get "users/index"
+  get "home/index"
+
   devise_for :users
 
-  resources :addresses
-
-
-  resources :customers
-
-
-  get "home/index"
-  
   resources :products
   resources :contacts
   resources :b_products
   resources :categories
   resources :admins
+  resources :customers
+  resources :users # not sure if needed
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,3 +1,3 @@
 class Customer < ActiveRecord::Base
-  attr_accessible :address_id, :fname, :lname, :password, :phone, :username
+  attr_accessible :address, :fname, :lname, :phone
 end
