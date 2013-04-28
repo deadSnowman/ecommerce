@@ -1,4 +1,7 @@
 class CustomersController < ApplicationController
+
+  http_basic_authenticate_with :name => "admin", :password => "password"
+
   # GET /customers
   # GET /customers.json
   def index
