@@ -6,6 +6,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.rememberable
       t.trackable
 
+      # moved from customers
+      t.string :fname
+      t.string :lname
+      t.string :phone
+
       # t.encryptable
       # t.confirmable
       # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both

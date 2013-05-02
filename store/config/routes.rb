@@ -10,7 +10,6 @@ Store::Application.routes.draw do
   resources :b_products
   resources :categories
   resources :admins
-  resources :customers
   resources :users # not sure if needed
 
   # The priority is based upon order of creation:

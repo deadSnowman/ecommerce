@@ -1,20 +1,20 @@
-<%- model_class = Customer -%>
+<%- model_class = User -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:fname) %>:</strong></dt>
-  <dd><%= @customer.fname %></dd>
+  <dd><%= @user.fname %></dd>
   <dt><strong><%= model_class.human_attribute_name(:lname) %>:</strong></dt>
-  <dd><%= @customer.lname %></dd>
+  <dd><%= @user.lname %></dd>
   <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
-  <dd><%= number_to_phone(@customer.phone, :area_code => true) %></dd>
+  <dd><%= number_to_phone(@user.phone, :area_code => true) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
-  <dd><%= @customer.address %></dd>
+  <dd><%= @user.address %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_user_path(@customer), :class => 'btn' %>
+              edit_user_path(@user), :class => 'btn' %>
 </div>
