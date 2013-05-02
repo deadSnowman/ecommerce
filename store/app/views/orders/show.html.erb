@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @order.user_id %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @order.product_id %>
+</p>
+
+<p>
+  <b>Required date:</b>
+  <%= @order.required_date %>
+</p>
+
+<p>
+  <b>Shipped date:</b>
+  <%= @order.shipped_date %>
+</p>
+
+<p>
+  <b>In cart:</b>
+  <%= @order.in_cart %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

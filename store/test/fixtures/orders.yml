@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  product_id: 1
+  required_date: 2013-05-02 18:52:33
+  shipped_date: 2013-05-02 18:52:33
+  in_cart: false
+
+two:
+  user_id: 1
+  product_id: 1
+  required_date: 2013-05-02 18:52:33
+  shipped_date: 2013-05-02 18:52:33
+  in_cart: false

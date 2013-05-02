@@ -1,5 +1,8 @@
 Store::Application.routes.draw do
 
+  resources :orders
+
+
   get "users/index"
   get "home/index"
 
