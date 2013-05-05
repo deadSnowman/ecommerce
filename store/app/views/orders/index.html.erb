@@ -20,8 +20,8 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= link_to order.id, order_path(order) %></td>
-        <td><%= order.user_id %></td>
-        <td><%= order.product_id %></td>
+        <td><%= link_to User.find(order.user_id).fname + " " + User.find(order.user_id).lname, user_path(order.user_id) %></td>
+        <td><%= link_to Product.find(order.product_id).name, product_path(order.product_id) %></td>
         <td><%= order.required_date %></td>
         <td><%= order.shipped_date %></td>
         <td><%= order.in_cart %></td>
