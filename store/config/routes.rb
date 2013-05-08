@@ -1,8 +1,6 @@
 Store::Application.routes.draw do
 
-  resources :orders
-
-
+  get "b_carts/index"
   get "users/index"
   get "home/index"
 
@@ -14,6 +12,9 @@ Store::Application.routes.draw do
   resources :categories
   resources :admins
   resources :users # not sure if needed
+  resources :carts
+  resources :orders
+  resources :b_carts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

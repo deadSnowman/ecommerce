@@ -1,14 +1,8 @@
 <%= form_for @order, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :user, :class => 'control-label' %>
+    <%= f.label :cart_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select :user_id, User.all, :id, :fname, {} %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :product, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :product_id, Product.all, :id, :name, {} %>
+      <%= f.collection_select :cart_id, Cart.all, :id, :user_id, {} %>
     </div>
   </div>
   <div class="control-group">
@@ -21,12 +15,6 @@
     <%= f.label :shipped_date, :class => 'control-label' %>
     <div class="controls">
       <%= f.datetime_select :shipped_date %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :in_cart, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :in_cart, :class => 'checkbox' %>
     </div>
   </div>
   <div class="form-actions">

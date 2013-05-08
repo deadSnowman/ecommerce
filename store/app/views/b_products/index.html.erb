@@ -1,4 +1,8 @@
-<h1>Browse Products</h1>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+
 <div class="row">
   <div class="span3">
     <div class="well" style="max-width: 340px; padding: 8px 0;">
@@ -9,13 +13,13 @@
         <% end %>
       </ul>
     </div>
-  
+
     <form class="form-search">
       <div class="input-append">
         <input type="text" class="span2 search-query">
         <button type="submit" class="btn">Search</button>
       </div>
-    </form> 
+    </form>
 
   </div>
 
@@ -25,56 +29,59 @@
     <div class="row">
       <div class="span9">
 
-        <%-# display 10 products per section -%>
-        <table class="table">
-          <% @products.each_slice(10) do |slice| %>
-            <% slice.each do |product| %>
-              <tr>
-                <td width="">
-                  <label class="checkbox">
-                    <input type="checkbox" />
-                  </label>
-                </td>
-                <td width="25%">PICTURE</td>
-                <td width="30%">
-                  <h4><%= product.name %></h4>
-                  <p>$<%= product.price %></p>
-                  <% if product.instock != true %>
-                    <p>Out of stock</p>
-                  <% end %>
-                </td>
-                <td>
-                  Category: <%= Category.find_by_id(product.category_id).name =%><br \>
-                  Description: <%= product.description %>
-                </td>
-              </tr>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>
 
-      <!--<p>cat test</p>-->
-      <%#<% @categories.each do |category| %>
-        <%#<p><%= category.name %><!--</p>-->
-        <%#<% end %>
 
-      <div class="pagination">
-        <ul>
-          <li><a href="#">Prev</a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#">Next</a></li>
-        </ul>
+        <!--form testing-->
+
+        <% #render :partial => 'form' %>
+
+        <!------------------->
+
+            <%-# display 10 products per section -%>
+            <table class="table">
+              <% @products.each_slice(10) do |slice| %>
+                <% slice.each do |product| %>
+                  <tr>
+                    <td width="">
+                      <label class="checkbox">
+                        <input type="checkbox" />
+                      </label>
+                    </td>
+                    <td width="25%">PICTURE</td>
+                    <td width="30%">
+                      <h4><%= product.name %></h4>
+                      <p>$<%= product.price %></p>
+                      <% if product.instock != true %>
+                        <p>Out of stock</p>
+                      <% end %>
+                    </td>
+                    <td>
+                      Category: <%= Category.find_by_id(product.category_id).name =%><br \>
+
+                      Description: <%= product.description %>
+                    </td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+
+          <div class="pagination">
+            <ul>
+              <li><a href="#">Prev</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </div>
+
+
+          <!--span2-->
+        </div>
+
+
       </div>
-
-
-      <!--span2-->
     </div>
-
-
-  </div>
-</div>
-</div>

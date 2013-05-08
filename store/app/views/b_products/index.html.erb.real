@@ -1,0 +1,85 @@
+<%- model_class = Product -%>
+<h1>Browse Products</h1>
+<div class="row">
+  <div class="span3">
+    <div class="well" style="max-width: 340px; padding: 8px 0;">
+      <ul class="nav nav-list">
+        <li class="nav-header">Categories</li>
+        <% Category.all.each do |category| %>
+          <li><a href="#"><%= category.name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  
+    <form class="form-search">
+      <div class="input-append">
+        <input type="text" class="span2 search-query">
+        <button type="submit" class="btn">Search</button>
+      </div>
+    </form> 
+
+  </div>
+
+
+  <div class="span9">
+
+    <div class="row">
+      <div class="span9">
+
+        <%-# display 10 products per section -%>
+        <table class="table">
+          <% @products.each_slice(10) do |slice| %>
+            <% slice.each do |product| %>
+              <tr>
+                <td width="">
+                  <label class="checkbox">
+                    <input type="checkbox" />
+                  </label>
+                </td>
+                <td width="25%">PICTURE</td>
+                <td width="30%">
+                  <h4><%= product.name %></h4>
+                  <p>$<%= product.price %></p>
+                  <% if product.instock != true %>
+                    <p>Out of stock</p>
+                  <% end %>
+                </td>
+                <td>
+                  Category: <%= Category.find_by_id(product.category_id).name =%><br \>
+                  Description: <%= product.description %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+
+
+      <!--testing form-->
+      <% if user_signed_in? %>
+        <%= render :partial => 'form' %>
+      <% end %>
+
+
+
+
+      <div class="pagination">
+        <ul>
+          <li><a href="#">Prev</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">Next</a></li>
+        </ul>
+      </div>
+
+
+      <!--span2-->
+    </div>
+
+
+  </div>
+</div>
+</div>

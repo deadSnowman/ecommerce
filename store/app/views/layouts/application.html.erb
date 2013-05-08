@@ -39,7 +39,7 @@
               <li><%= link_to "Browse Products", b_products_path %></li>
               <li><%= link_to "Admin", admins_path%></li>
               <li><%= link_to "Contact Us", contacts_path %></li>
-              <li><%= link_to "Cart" %></li>
+              <li><%= link_to "Cart", b_carts_path %></li>
               <% if user_signed_in? %>
                 <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
                 <li class="emailDiv"><%= link_to current_user.email, users_path + "/" + current_user.id.to_s %></li>
