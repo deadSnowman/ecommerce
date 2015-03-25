@@ -1,11 +1,13 @@
 Store::Application.routes.draw do
 
+  #get "books/index"
   get "b_carts/index"
   get "users/index"
   get "home/index"
 
   devise_for :users
 
+  resources :books
   resources :products
   resources :contacts
   resources :b_products

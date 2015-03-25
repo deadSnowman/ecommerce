@@ -42,14 +42,9 @@
               <% @products.each_slice(10) do |slice| %>
                 <% slice.each do |product| %>
                   <tr>
-                    <td width="">
-                      <label class="checkbox">
-                        <input type="checkbox" />
-                      </label>
-                    </td>
                     <td width="25%">PICTURE</td>
                     <td width="30%">
-                      <h4><%= product.name %></h4>
+                      <h4><%= link_to product.name, '#' %></h4>
                       <p>$<%= product.price %></p>
                       <% if product.instock != true %>
                         <p>Out of stock</p>
@@ -63,6 +58,17 @@
                   </tr>
                 <% end %>
               <% end %>
+              <tr>
+                <td width="25%">PICTURE</td>
+                  <td width="30%">
+                    <h4><%= link_to "That book you need to order RIGTH NOW", books_path %></h4>
+                    <p>$100.0</p>
+                  </td>
+                <td>
+                Category: Textbook<br \>
+                  Description: Get this for class man!
+              </td>
+              </tr>
             </tbody>
           </table>
 

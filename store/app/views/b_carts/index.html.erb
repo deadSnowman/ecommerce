@@ -8,7 +8,7 @@
 
 
   <div class="row">
-    <div class="span7">
+    <div class="span12">
 
     <table class="table table-striped">
       <thead>
@@ -16,7 +16,6 @@
           <th><%= model_class.human_attribute_name(:user_id) %></th>
           <th><%= model_class.human_attribute_name(:product_id) %></th>
           <th><%= model_class.human_attribute_name(:created_at) %></th>
-          <th><%=t '.actions', :default => t("helpers.actions") %></th>
         </tr>
       </thead>
       <tbody>
@@ -36,15 +35,84 @@
               </tr>
             <% end %>
           <% end %>
+          <tr>
+            <td>Seth Thomas</td>
+            <td>That book you need to order RIGTH NOW</td>
+            <td>Mon, 24 Nov 2014</td>
+          </tr>
+          <tr>
+            <td>Seth Thomas</td>
+            <td>Systems Analysis and Design 8th ed</td>
+            <td>Mon, 23 Nov 2014</td>
+          </tr>
         </tbody>
       </table>
 
-    </div><!--span7-->
-    <div class="span5">
-      <br \>
-      <%= link_to t('.submit_order'), new_user_session_path, :class => 'btn btn-primary btn-large btn-block' %>
-    </div><!--span5-->
-  </div><!--row-->
+
+    <br \>
+    <br \>
+    <hr \>
+    <h2>Billing Information</h2>
+    <form role="form" class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label" for="product_name">Name</label>
+      <div class="controls">
+        <input class="text_field" id="product_name" name="product[name]" size="30" type="text" value="Systems Analysis and Design 8th ed" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="exampleInputEmail1" class="control-label">Email address</label>
+      <div class="controls">
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="product_description">Mailing Address</label>
+      <div class="controls">
+        <textarea class="text_area" cols="40" id="address" name="address" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="cardnumber" class="control-label">Credit Card</label>
+      <div class="controls">
+        <input type="text" class="form-control" id="credit_card" placeholder="XXXX-XXXX-XXXX-XXXX">
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="securitycode" class="control-label">Security Code</label>
+      <div class="controls">
+        <input type="text" class="form-control" id="security_code" placeholder="XXX">
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="expire" class="control-label">Expire Date</label>
+      <div class="controls">
+        <input type="text" class="form-control" id="expire_date" placeholder="X/X">
+      </div>
+    </div>
+
+
+  <div class="control-group">
+      <label class="control-label" for="product_category">Card Type</label>
+          <div class="controls">
+                <select id="product_category_id" name="product[category_id]"><option value="1">Master Card</option>
+                <option value="2" selected="selected">VISA</option>
+                <option value="4">Discover Card</option>
+                <option value="7">American Express</option></select>
+                    </div>
+                      </div>
+
+
+    <div class="form-actions">
+    <%= link_to t('.submit_order'), new_user_session_path, :class => 'btn btn-primary' %>
+    <!--<%= link_to t('.submit_order'), new_user_session_path, :class => 'btn btn-primary btn-large btn-block' %>-->
+    <a href="/b_products" class="btn">Cancel</a>
+    </div>
+    </form>
+
+
+
+  </div>
 
 
   <% else %>
